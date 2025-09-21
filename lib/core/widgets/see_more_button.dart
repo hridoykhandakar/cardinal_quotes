@@ -18,7 +18,10 @@ class SeeMoreButton extends StatelessWidget {
           color: AppColors.color1,
         ),
       ),
-      style: ButtonStyle(iconAlignment: IconAlignment.end),
+      style: ButtonStyle(
+        iconAlignment: IconAlignment.end,
+        padding: WidgetStatePropertyAll(EdgeInsets.zero),
+      ),
     );
   }
 }

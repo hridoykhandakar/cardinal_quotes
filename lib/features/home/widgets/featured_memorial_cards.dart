@@ -2,8 +2,8 @@ import 'package:cardinal_quotes/core/widgets/image_card.dart';
 import 'package:cardinal_quotes/core/widgets/section_header.dart';
 import 'package:flutter/material.dart';
 
-class FeatureWallpaper extends StatelessWidget {
-  const FeatureWallpaper({super.key});
+class FeaturedMemorialCards extends StatelessWidget {
+  const FeaturedMemorialCards({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class FeatureWallpaper extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: SectionHeader(
-              title: "Featured Wallpapers",
+              title: "Featured Memorial Cards",
               onSeeMorePressed: () {},
             ),
           ),
