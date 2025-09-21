@@ -1,17 +1,19 @@
 import 'package:cardinal_quotes/core/constants/app_colors.dart';
-import 'package:cardinal_quotes/features/auth/views/signup_view.dart';
+import 'package:cardinal_quotes/features/auth/views/signIn_view.dart';
 import 'package:cardinal_quotes/features/auth/widgets/auth_button.dart';
 import 'package:flutter/material.dart';
 
-class SignInView extends StatefulWidget {
-  const SignInView({super.key});
+class SignupView extends StatefulWidget {
+  const SignupView({super.key});
 
   @override
-  State<SignInView> createState() => _SignInViewState();
+  State<SignupView> createState() => _SignupViewState();
 }
 
-class _SignInViewState extends State<SignInView> {
+class _SignupViewState extends State<SignupView> {
   bool _isPasswordVisible = false;
+  bool _isConformPasswordVisible = false;
+  bool _isSIgnIn = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,22 +39,26 @@ class _SignInViewState extends State<SignInView> {
                     children: [
                       AuthButton(
                         text: "Sign Up",
+                        variant: ButtonVariant.defaultStyle,
+                        onPressed: () {
+                          setState(() {
+                            _isSIgnIn = false;
+                          });
+                          print(_isSIgnIn);
+                        },
+                      ),
+                      AuthButton(
+                        text: "Sign In",
                         variant: ButtonVariant.outline,
 
                         onPressed: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => SignupView(),
+                              builder: (context) => SignInView(),
                             ),
                           );
                         },
-                      ),
-                      AuthButton(
-                        text: "Sign In",
-                        variant: ButtonVariant.defaultStyle,
-
-                        onPressed: () {},
                       ),
                     ],
                   ),
@@ -61,7 +67,7 @@ class _SignInViewState extends State<SignInView> {
                     constraints: BoxConstraints(maxWidth: 352),
                     child: TextField(
                       decoration: InputDecoration(
-                        hintText: "Enter your Email Address",
+                        hintText: "Enter your username",
                         hintStyle: TextStyle(
                           color: AppColors.color3,
                           fontSize: 14,
@@ -76,12 +82,14 @@ class _SignInViewState extends State<SignInView> {
                     child: TextField(
                       obscureText: !_isPasswordVisible,
                       decoration: InputDecoration(
-                        hintText: "Enter Password",
+                        hintText: "Create A Password",
 
                         hintStyle: TextStyle(
                           color: AppColors.color3,
                           fontSize: 14,
                         ),
+                        filled: true,
+                        fillColor: AppColors.authBg,
                         suffixIcon: IconButton(
                           icon: Icon(
                             _isPasswordVisible
@@ -95,6 +103,55 @@ class _SignInViewState extends State<SignInView> {
                             });
                           },
                         ),
+                      ),
+                    ),
+                  ),
+
+                  const SizedBox(height: 15),
+                  Container(
+                    constraints: BoxConstraints(maxWidth: 352),
+                    child: TextField(
+                      obscureText: !_isConformPasswordVisible,
+                      decoration: InputDecoration(
+                        hintText: "Confirm password",
+
+                        hintStyle: TextStyle(
+                          color: AppColors.color3,
+                          fontSize: 14,
+                        ),
+                        filled: true,
+                        fillColor: AppColors.authBg,
+                        suffixIcon: IconButton(
+                          icon: Icon(
+                            _isConformPasswordVisible
+                                ? Icons.visibility
+                                : Icons.visibility_off,
+                            color: AppColors.color3,
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              _isConformPasswordVisible =
+                                  !_isConformPasswordVisible;
+                            });
+                          },
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 15),
+                  Container(
+                    constraints: BoxConstraints(maxWidth: 352),
+                    child: TextField(
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: InputDecoration(
+                        hintText: "Enter your email address",
+                        hintStyle: TextStyle(
+                          color: AppColors.color3,
+                          fontSize: 14,
+                        ),
+                        isDense: true,
+                        filled: true,
+                        fillColor: AppColors.authBg,
                       ),
                     ),
                   ),
