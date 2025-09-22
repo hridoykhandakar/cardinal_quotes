@@ -63,6 +63,7 @@ flutter:
     - assets/images/
     - assets/images/bottom_nav/
     - assets/images/home_card/
+    - assets/images/sidebar/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

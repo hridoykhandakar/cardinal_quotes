@@ -1,5 +1,6 @@
 import 'package:cardinal_quotes/core/constants/app_colors.dart';
 import 'package:cardinal_quotes/core/theme/theme.dart';
+import 'package:cardinal_quotes/core/widgets/app_drawer.dart';
 import 'package:cardinal_quotes/features/home/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -49,13 +50,9 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: IconButton(
-          onPressed: () {
-            Scaffold.of(context).openDrawer();
-          },
-          icon: Icon(Icons.menu, color: AppColors.color1),
-        ),
+        iconTheme: IconThemeData(color: AppColors.color1),
       ),
+      drawer: AppDrawer(),
       backgroundColor: AppColors.homeBg,
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
@@ -112,7 +109,6 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      drawer: Drawer(child: Center(child: Text("Drawer Menu"))),
 
       body: _pages[_selectedIndex],
     );
@@ -121,6 +117,8 @@ class _HomePageState extends State<HomePage> {
   SvgPicture bottomSvgIcon({required iconName}) =>
       SvgPicture.asset("$imgUrl/$iconName.svg", height: 24, width: 24);
 }
+
+
 
 // NavigationBar(
 //         selectedIndex: _selectedIndex,
@@ -155,3 +153,40 @@ class _HomePageState extends State<HomePage> {
 //           ),
 //         ],
 //       ),
+
+
+// ListView(
+//           children: [
+//             DrawerHeader(
+//               decoration: BoxDecoration(color: AppColors.color1),
+//               child: Text(
+//                 'Drawer Header',
+//                 style: TextStyle(color: Colors.white, fontSize: 24),
+//               ),
+//             ),
+//             ListTile(
+//               leading: Icon(Icons.home),
+//               title: Text('Home'),
+//               onTap: () {
+//                 // Handle navigation to Home
+//                 Navigator.pop(context); // Close the drawer
+//               },
+//             ),
+//             ListTile(
+//               leading: Icon(Icons.settings),
+//               title: Text('Settings'),
+//               onTap: () {
+//                 // Handle navigation to Settings
+//                 Navigator.pop(context); // Close the drawer
+//               },
+//             ),
+//             ListTile(
+//               leading: Icon(Icons.contact_mail),
+//               title: Text('Contact Us'),
+//               onTap: () {
+//                 // Handle navigation to Contact Us
+//                 Navigator.pop(context); // Close the drawer
+//               },
+//             ),
+//           ],
+//         ),

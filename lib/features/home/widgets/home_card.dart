@@ -19,21 +19,29 @@ class HomeCard extends StatelessWidget {
 
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
 
           children: [
-            SvgPicture.asset(imgUrl, height: 24, width: 24),
-            Expanded(
-              child: Text(
-                title,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                  color: AppColors.color3,
-                ),
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
+            SizedBox(
+              height: 25,
+              width: 25,
+              child: SvgPicture.asset(
+                imgUrl,
+                height: 24,
+                width: 24,
+                fit: BoxFit.contain,
               ),
+            ),
+            Text(
+              title,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+                color: AppColors.color3,
+              ),
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
             ),
           ],
         ),
