@@ -47,12 +47,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        iconTheme: IconThemeData(color: AppColors.color1),
-      ),
-      drawer: AppDrawer(),
       backgroundColor: AppColors.homeBg,
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
@@ -117,76 +111,3 @@ class _HomePageState extends State<HomePage> {
   SvgPicture bottomSvgIcon({required iconName}) =>
       SvgPicture.asset("$imgUrl/$iconName.svg", height: 24, width: 24);
 }
-
-
-
-// NavigationBar(
-//         selectedIndex: _selectedIndex,
-//         indicatorColor: Colors.transparent,
-
-//         destinations: [
-//           NavigationDestination(
-//             icon: SvgPicture.asset("$imgUrl/home.svg", height: 24, width: 24),
-//             selectedIcon: SvgPicture.asset(
-//               "$imgUrl/home_active.svg",
-//               height: 24,
-//               width: 24,
-//             ),
-
-//             label: "Home",
-//           ),
-//           NavigationDestination(
-//             icon: SvgPicture.asset("$imgUrl/music.svg", height: 24, width: 24),
-//             label: "Sounds",
-//           ),
-//           NavigationDestination(
-//             icon: SvgPicture.asset("$imgUrl/soul.svg", height: 24, width: 24),
-//             label: "Soul",
-//           ),
-//           NavigationDestination(
-//             icon: SvgPicture.asset("$imgUrl/quotes.svg", height: 24, width: 24),
-//             label: "Quotes",
-//           ),
-//           NavigationDestination(
-//             icon: SvgPicture.asset("$imgUrl/more.svg", height: 24, width: 24),
-//             label: "More",
-//           ),
-//         ],
-//       ),
-
-
-// ListView(
-//           children: [
-//             DrawerHeader(
-//               decoration: BoxDecoration(color: AppColors.color1),
-//               child: Text(
-//                 'Drawer Header',
-//                 style: TextStyle(color: Colors.white, fontSize: 24),
-//               ),
-//             ),
-//             ListTile(
-//               leading: Icon(Icons.home),
-//               title: Text('Home'),
-//               onTap: () {
-//                 // Handle navigation to Home
-//                 Navigator.pop(context); // Close the drawer
-//               },
-//             ),
-//             ListTile(
-//               leading: Icon(Icons.settings),
-//               title: Text('Settings'),
-//               onTap: () {
-//                 // Handle navigation to Settings
-//                 Navigator.pop(context); // Close the drawer
-//               },
-//             ),
-//             ListTile(
-//               leading: Icon(Icons.contact_mail),
-//               title: Text('Contact Us'),
-//               onTap: () {
-//                 // Handle navigation to Contact Us
-//                 Navigator.pop(context); // Close the drawer
-//               },
-//             ),
-//           ],
-//         ),
