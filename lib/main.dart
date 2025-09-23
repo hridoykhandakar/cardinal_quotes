@@ -1,7 +1,7 @@
 import 'package:cardinal_quotes/core/constants/app_colors.dart';
 import 'package:cardinal_quotes/core/theme/theme.dart';
-import 'package:cardinal_quotes/core/widgets/app_drawer.dart';
 import 'package:cardinal_quotes/features/home/views/home_view.dart';
+import 'package:cardinal_quotes/features/sounds/views/sounds_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
 
   final List<Widget> _pages = [
     HomeView(),
-    Center(child: Text("Sounds Page")),
+    SoundsScreen(),
     Center(child: Text("Soul Page")),
     Center(child: Text("Quotes Page")),
     Center(child: Text("More Page")),
