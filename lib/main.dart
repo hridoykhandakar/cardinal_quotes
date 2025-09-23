@@ -1,5 +1,7 @@
 import 'package:cardinal_quotes/core/constants/app_colors.dart';
 import 'package:cardinal_quotes/core/theme/theme.dart';
+import 'package:cardinal_quotes/features/auth/views/signIn_view.dart';
+import 'package:cardinal_quotes/features/auth/views/signup_view.dart';
 import 'package:cardinal_quotes/features/home/views/home_view.dart';
 import 'package:cardinal_quotes/features/sounds/views/sounds_screen.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +21,13 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: appTheme(),
+      initialRoute: '/signIn',
+      routes: {
+        '/home': (context) => HomePage(),
+        '/sounds': (context) => SoundsScreen(),
+        '/signIn': (context) => SignInView(),
+        '/signUp': (context) => SignupView(),
+      },
       home: HomePage(),
     );
   }

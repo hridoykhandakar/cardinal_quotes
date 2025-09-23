@@ -1,6 +1,7 @@
 import 'package:cardinal_quotes/core/constants/app_colors.dart';
 import 'package:cardinal_quotes/features/auth/views/signup_view.dart';
 import 'package:cardinal_quotes/features/auth/widgets/auth_button.dart';
+import 'package:cardinal_quotes/main.dart';
 import 'package:flutter/material.dart';
 
 class SignInView extends StatefulWidget {
@@ -100,7 +101,15 @@ class _SignInViewState extends State<SignInView> {
                   ),
 
                   const SizedBox(height: 43),
-                  AuthButton(text: "Next", onPressed: () {}),
+                  AuthButton(
+                    text: "Next",
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => HomePage()),
+                      );
+                    },
+                  ),
                 ],
               ),
             ),
